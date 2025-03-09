@@ -1,0 +1,325 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wgth@300;400;500;600;700;800;900&display=sway");
+
+    
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    min-height: 100vh;
+    background-color: #cccccc;
+    background-size: cover;
+    background-position: center;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    padding: 20px 20px;
+    background: #009696;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 5px solid #e27714;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.logo {
+    font-size: 30px;
+    color: #e27714;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    text-shadow: -1px -1px 0 #ffffff,  
+    1px -1px 0 #ffffff,
+   -1px  1px 0 #ffffff,
+    1px  1px 0 #ffffff; 
+    text-decoration: none;
+}
+.sidebar-icon {
+    font-size: 24px; /* Adjust the size as needed */
+    cursor: pointer; 
+    transition: color 0.3s, text-decoration 0.3s;
+    padding: 10px 5%;
+}
+.sidebar-icon:hover {
+    color: #e27714; /* Change to desired hover color */
+    text-decoration: underline; /* Add underline on hover */
+}
+.sidebar {
+        width: 250px;
+        height: 100%;
+        background-color: #0d635c; 
+        position: fixed;
+        top: 0;
+        left: -250px; /* Hide the sidebar by default */
+        transition: left 0.3s; 
+        padding: 20px;
+        padding-top: 120px;
+        border: 10px solid #e27714;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.sidebar.show {
+        left: 0; /* Show the sidebar */
+        width: 350px;
+}
+.sidebar a{
+    display: block;
+    color: #fff;
+    padding: 10px 0;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3, border-color 0.3s;
+    text-align: center;
+    border: 1px solid #fff;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 400;
+    text-shadow: 
+        -1px -1px 0 #092523,  
+         1px -1px 0 #092523,
+        -1px  1px 0 #092523,
+         1px  1px 0 #092523;
+}
+.sidebar a:hover{
+    color: #fff;
+    background-color: #e27714;
+    border-color: #ad6c0b;
+}
+body.sidebar-open .content-box {
+    margin-left: 170px; /* Adjust margin when sidebar is open */
+}
+
+.logo-img {
+    width: 60px; 
+    height: auto;
+    margin-right: 8px;
+    border-color: #ffffff;
+    border: 2px solid #ffffff;
+}
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: center;
+}
+.navbar a{
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+}
+.navbar :hover{
+    color: #e27714; /* Change to desired hover color */
+}
+.navbar a i{
+    margin-right: 8px;
+}
+.navbar a::before{
+    content:"";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ad6c0b;
+    transition: width 0.3s;
+}
+.navbar a:hover::before{
+    width: 100%;
+}
+.navbar a :hover{
+    color: #e27714; /* Change to desired hover color */
+    text-decoration: underline;
+
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #e27714;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 2px solid #ad6c0b;
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: flex;
+}
+
+.dropdown-content a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh-80px);
+    padding: 20px;
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease;
+    margin-left: 0;
+}
+body.sidebar-open main{
+    margin-left: 170px;
+}
+.content-box{
+    width: 100%;
+    max-width: 1200px; /* Optional: Set a max width for the box */
+    min-width: 600px; /* Set a minimum width for the box */
+    height: calc(100vh -120px); /* Adjust height to fit the content */
+    padding: 20px; /* Add padding inside the box */
+    border: 2px solid #0f7770; /* Add border to the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for dynamics */
+    background-color: #fff; /* Change the background color of the box */
+    margin-top: 100px; /* Add margin to the top to avoid overlap with the header */
+    position: relative; 
+    transition: margin-left 0.3s;
+    display: flex;
+    flex-direction: column;
+}.level1{
+    display: block;
+    align-items: center;
+    color: #fff; /* Ensure text color is white */
+    padding: 10px 0;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s; /* Add transition for background color */
+    text-align: center;
+    border: 1px solid #fff; /* Add border */
+    margin: 10px 0; /* Add margin between links */
+    border-radius: 5px; /* Optional: Add border radius for rounded corners */
+    font-family: 'Roboto', sans-serif; /* Apply new font */
+    font-weight: 700; /* Make the font bold */
+}
+.progress-bar{
+    display: flex;
+    color: #ffffff;
+    padding: 50px 50px;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+    border: 5px solid #84b305;
+    margin: 10px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    background-color: rgb(169, 230, 3);
+    font-size: 70px;
+    width: 100%;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.progress {
+    background-color: rgb(169, 230, 3);
+    border-radius: 25px;
+    overflow: hidden;
+    height: 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 2px solid #84b305;
+    box-sizing: border-box;
+}
+.progress-fill{
+    background-color: #84b305;
+    height: 100%;
+    width: 0;
+    transition: width 0.5s;
+    border: 1px solid rgb(169, 230, 3);
+    box-sizing: border-box;
+}
+.progress-bar h6{
+    margin: 0;
+}
+.level1 .story-box{
+    width: 100%; 
+    background-color: #ffffff; /* Semi-transparent background */
+    padding: 0px;
+    border: 5px solid rgb(169, 230, 3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    overflow-y: auto;
+    margin-top: 30px;
+}
+.story-box h4{
+    color: #0f0f0f;
+    font-size: 50px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-shadow: -1px -1px 0 #000000;
+}
+.story-box p{
+    color: #000000;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+    text-align: justify;
+    line-height: 1.6;
+    margin:20px 20px;
+    margin-bottom: 20px;
+}
+.next-button {
+    display:inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #84b305;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    transition: color 0.3s, background-color 0.3s;
+    margin-top: 20px;
+    transform: scale(1.05);
+}
+.next-button a{
+    text-decoration: none;
+    color: #ffffff;
+}
+.next-button::before{
+    content:"";
+    bottom: 10px;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #84b305;
+    transition: width 0.3s;
+}
+.next-button:hover{
+    background-color: rgb(169, 230, 3);
+    color: #fff;
+    text-decoration: underline;
+    transform: scale(1.05);
+}
